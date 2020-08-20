@@ -6,7 +6,8 @@ class InstaBot:
         self.driver = webdriver.Chrome()
         self.driver.get('https://instagram.com')
         sleep(2)
-
+        
+        # Get username and password from txt file
         with open('secrets.txt', mode='r') as secrets:
             username = ''
             password = ''
@@ -51,8 +52,8 @@ class InstaBot:
             .click()
         followers = self._get_names()
         
-        mofos = [user for user in following if user not in followers]
-        for mofo in mofos:
+        people = [user for user in following if user not in followers]
+        for person in people:
             print(mofo)
 
 
